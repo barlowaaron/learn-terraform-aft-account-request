@@ -27,7 +27,7 @@ module "test1" {
 }
 
 
-module "test1" {
+module "test2" {
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
