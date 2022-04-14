@@ -50,3 +50,6 @@ variable "account_customizations_name" {
   description = "The name of the account customizations to apply"
 }
 
+variable "account_assignment_map" {
+  
+}
