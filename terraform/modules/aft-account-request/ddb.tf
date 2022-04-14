@@ -5,12 +5,12 @@ resource "aws_dynamodb_table_item" "account-request" {
   item = jsonencode({
     id = { S = lookup(var.account_assignment_map, "AccountEmail") }
     account_assignment_map = { M = {
-      AccountEmail              = { S = lookup(each.value.AccountEmail, "AccountEmail") }
-      AccountName               = { S = lookup(each.value.AccountName, "AccountName") }
-      ManagedOrganizationalUnit = { S = lookup(each.value.ManagedOrganizationalUnit, "ManagedOrganizationalUnit") }
-      SSOUserEmail              = { S = lookup(each.value.SSOUserEmail, "SSOUserEmail") }
-      SSOUserFirstName          = { S = lookup(each.value.SSOUserFirstName, "SSOUserFirstName") }
-      SSOUserLastName           = { S = lookup(each.value.SSOUserLastName, "SSOUserLastName") }
+      AccountEmail              = { S = lookup(var.account_assignment_map, "AccountEmail") }
+      AccountName               = { S = lookup(var.account_assignment_map, "AccountName") }
+      ManagedOrganizationalUnit = { S = lookup(var.account_assignment_map, "ManagedOrganizationalUnit") }
+      SSOUserEmail              = { S = lookup(var.account_assignment_map, "SSOUserEmail") }
+      SSOUserFirstName          = { S = lookup(var.account_assignment_map, "SSOUserFirstName") }
+      SSOUserLastName           = { S = lookup(var.account_assignment_map, "SSOUserLastName") }
       }
     }
     change_management_parameters = { M = {
