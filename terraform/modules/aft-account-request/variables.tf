@@ -26,11 +26,13 @@ variable "change_management_parameters" {
     change_requested_by = string
     change_reason       = string
   })
+  default = {}
 }
 
 variable "account_tags" {
   type        = map(any)
   description = "map of account-level tags"
+  default = {}
 }
 
 variable "custom_fields" {
