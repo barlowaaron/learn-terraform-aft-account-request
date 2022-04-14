@@ -26,7 +26,10 @@ variable "change_management_parameters" {
     change_requested_by = string
     change_reason       = string
   })
-  default = {}
+  default = {
+    change_reason = "na"
+    change_requested_by = "na"
+  }
 }
 
 variable "account_tags" {
