@@ -1,16 +1,16 @@
 resource "aws_dynamodb_table_item" "account-request" {
   table_name = var.account-request-table
   hash_key   = var.account-request-table-hash
-
+    for_each = { for combo in var.accounts_map : combo.AccountEmail => combo}
   item = jsonencode({
     id = { S = lookup(var.control_tower_parameters, "AccountEmail") }
     control_tower_parameters = { M = {
-      AccountEmail              = { S = lookup(var.control_tower_parameters, "AccountEmail") }
-      AccountName               = { S = lookup(var.control_tower_parameters, "AccountName") }
-      ManagedOrganizationalUnit = { S = lookup(var.control_tower_parameters, "ManagedOrganizationalUnit") }
-      SSOUserEmail              = { S = lookup(var.control_tower_parameters, "SSOUserEmail") }
-      SSOUserFirstName          = { S = lookup(var.control_tower_parameters, "SSOUserFirstName") }
-      SSOUserLastName           = { S = lookup(var.control_tower_parameters, "SSOUserLastName") }
+      AccountEmail              = { S = lookup(each.value.AccountEmail, "AccountEmail") }
+      AccountName               = { S = lookup(each.value.AccountName, "AccountName") }
+      ManagedOrganizationalUnit = { S = lookup(each.value.ManagedOrganizationalUnit, "ManagedOrganizationalUnit") }
+      SSOUserEmail              = { S = lookup(each.value.SSOUserEmail, "SSOUserEmail") }
+      SSOUserFirstName          = { S = lookup(each.value.SSOUserFirstName, "SSOUserFirstName") }
+      SSOUserLastName           = { S = lookup(each.value.SSOUserLastName, "SSOUserLastName") }
       }
     }
     change_management_parameters = { M = {

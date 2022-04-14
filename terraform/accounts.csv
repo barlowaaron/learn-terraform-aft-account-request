@@ -1,0 +1,3 @@
+AccountEmail,AccountName,ManagedOrganizationalUnit,SSOUserEmail,SSOUserFirstName,SSOUserLastName,account_customizations_name
+AFT-MemberTest1LAB.AcctAwsPrg@progleasing.com,AFT-MemberTest1LAB,"AFT-LZ (ou-4nab-cmm3u75a)",AFT-MemberTest1LAB.AcctAwsPrg@progleasing.com,AFT,MemberTest1LAB,sandbox
+AFT-MemberTest2LAB.AcctAwsPrg@progleasing.com,AFT-MemberTest2LAB,"AFT-LZ (ou-4nab-cmm3u75a)",AFT-MemberTest2LAB.AcctAwsPrg@progleasing.com,AFT,MemberTest2LAB,sandbox
