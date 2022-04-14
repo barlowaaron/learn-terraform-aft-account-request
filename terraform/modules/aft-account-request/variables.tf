@@ -51,12 +51,12 @@ variable "account_customizations_name" {
 }
 
 variable "account_assignment_map" {
-  type = object({
-    AccountEmail              = string
-    AccountName               = string
-    ManagedOrganizationalUnit = string
-    SSOUserEmail              = string
-    SSOUserFirstName          = string
-    SSOUserLastName           = string
-  })
+  # type = object({
+  #   AccountEmail              = string
+  #   AccountName               = string
+  #   ManagedOrganizationalUnit = string
+  #   SSOUserEmail              = string
+  #   SSOUserFirstName          = string
+  #   SSOUserLastName           = string
+  # })
 }
