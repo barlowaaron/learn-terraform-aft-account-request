@@ -2,8 +2,10 @@ resource "aws_dynamodb_table_item" "account-request" {
   table_name = var.account-request-table
   hash_key   = var.account-request-table-hash
     for_each = { for combo in var.account_assignment_map : combo.AccountEmail => combo}
-  # item = jsonencode({
-    id                        = each.value.AccountEmail
+  item = <<ITEM
+   #jsonencode(
+     {
+    "id"                        = each.value.AccountEmail
     AccountEmail              = each.value.AccountEmail
     AccountName               = each.value.AccountName
     ManagedOrganizationalUnit = each.value.ManagedOrganizationalUnit
@@ -18,5 +20,6 @@ resource "aws_dynamodb_table_item" "account-request" {
     account_tags                = jsonencode(var.account_tags)
     account_customizations_name = each.value.account_customizations_name
     custom_fields               = jsonencode(var.custom_fields)
-#  })
+  }
+ITEM
 }
