@@ -10,16 +10,16 @@ variable "account-request-table-hash" {
   default     = "id"
 }
 
-# variable "control_tower_parameters" {
-#   type = object({
-#     AccountEmail              = string
-#     AccountName               = string
-#     ManagedOrganizationalUnit = string
-#     SSOUserEmail              = string
-#     SSOUserFirstName          = string
-#     SSOUserLastName           = string
-#   })
-# }
+variable "control_tower_parameters" {
+  type = object({
+    AccountEmail              = string
+    AccountName               = string
+    ManagedOrganizationalUnit = string
+    SSOUserEmail              = string
+    SSOUserFirstName          = string
+    SSOUserLastName           = string
+  })
+}
 
 variable "change_management_parameters" {
   type = object({
