@@ -33,5 +33,5 @@ account_assignment_map = csvdecode (file("./accounts.csv"))
 
 module "accountlist" {
   source = "./modules/aft-account-request"
-  account_assignment_map = local.account_assignment_map
+  control_tower_parameters = local.control_tower_parameters
 }

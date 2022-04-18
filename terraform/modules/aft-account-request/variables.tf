@@ -50,13 +50,13 @@ variable "account_customizations_name" {
   description = "The name of the account customizations to apply"
 }
 
-variable "account_assignment_map" {
-  # type = object({
-  #   AccountEmail              = string
-  #   AccountName               = string
-  #   ManagedOrganizationalUnit = string
-  #   SSOUserEmail              = string
-  #   SSOUserFirstName          = string
-  #   SSOUserLastName           = string
-  # })
-}
+# variable "account_assignment_map" {
+#   # type = object({
+#   #   AccountEmail              = string
+#   #   AccountName               = string
+#   #   ManagedOrganizationalUnit = string
+#   #   SSOUserEmail              = string
+#   #   SSOUserFirstName          = string
+#   #   SSOUserLastName           = string
+#   # })
+# }

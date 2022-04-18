@@ -1,10 +1,10 @@
 resource "aws_dynamodb_table_item" "account-request" {
   table_name = var.account-request-table
   hash_key   = var.account-request-table-hash
-    for_each = { for combo in var.account_assignment_map : combo.AccountEmail => combo}
+    for_each = { for combo in var.control_tower_parameters : combo.AccountEmail => combo}
   item = jsonencode({
     id = { S = each.value.AccountEmail }
-    account_assignment_map = { M = {
+    control_tower_parameters = { M = {
       AccountEmail              = { S = each.value.AccountEmail }
       AccountName               = { S = each.value.AccountName }
       ManagedOrganizationalUnit = { S = each.value.ManagedOrganizationalUnit }
