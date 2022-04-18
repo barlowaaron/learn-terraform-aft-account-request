@@ -1,5 +1,5 @@
 locals {
-account_assignment_map = csvdecode (file("./accounts.csv"))
+control_tower_parameters = csvdecode (file("./accounts.csv"))
 }
 
 # module "test1" {
